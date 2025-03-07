@@ -1,3 +1,4 @@
+import math
 def solution(flo):
-    anwer = int(flo)
+    anwer = math.trunc(flo) 
     return anwer
