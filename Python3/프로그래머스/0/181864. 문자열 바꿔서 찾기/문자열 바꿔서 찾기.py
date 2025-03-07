@@ -1,10 +1,5 @@
 def solution(myString, pat):
-    text = ""
-    for i in myString:
-        if i == "A":
-            text += "B"
-        elif i == "B":
-            text += "A"
+    text = myString.replace("A","C").replace("B","A").replace("C","B")
     if pat in text:
         answer = 1
     else:
