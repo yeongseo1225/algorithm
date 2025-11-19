@@ -1,15 +1,18 @@
-N = int(input())
+import sys
+input = sys.stdin.readline
 
-arr =[]
+N = int(input())
+A = [0]*N
+
 for i in range(N):
-    num = int(input())
-    arr.append(num)
-for i in range(len(arr)):
-    for j in range(len(arr)):
-        if arr[i] < arr [j]: #큰 값을 뒤로 보냄.
-            arr[i], arr[j] = arr[j], arr[i]
-print(*arr)            
-            
+    A[i] = int(input())
     
-     
-    
+for i in range(N-1):
+    for j in range(N-1-i):
+        if A[j] > A[j+1]:
+            temp = A[j]
+            A[j] = A[j+1]
+            A[j+1] = temp
+
+for i in range(N):
+    print(A[i])
