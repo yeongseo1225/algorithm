@@ -1,19 +1,13 @@
 import sys
-
 input = sys.stdin.readline
-N, M = map(int,input().split())
-#N : 수의 개수
-#M : 합을 구해야하는 횟수
-A = list(map(int,input().split()))
-S = [0] #1<=i<=j<=N 이라서... 
-sum = 0
-for i in A:
-    sum += i
-    S.append(sum)
-for _ in range(M):
-    i,j = map(int,input().split())
-    print(S[j]-S[i-1]) 
-    
-    
 
-    
+N, M = map(int,input().split())
+A = list(map(int,input().split()))
+S = [0] * (N+1)
+
+for i in range(1,N+1):
+    S[i] = S[i-1] + A[i-1]
+
+for _ in range(M):
+    a,b = map(int,input().split())
+    print(S[b]-S[a-1])
