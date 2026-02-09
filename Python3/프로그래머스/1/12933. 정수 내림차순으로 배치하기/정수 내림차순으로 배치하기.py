@@ -1,6 +1,5 @@
 def solution(n):
-    answer = 0
-    arr = list(str(n))
-    arr.sort(reverse = True)
-    answer = int(''.join(arr))
+    arr = list(map(int,str(n)))
+    arr.sort(reverse=True)
+    answer = int("".join(map(str,arr)))
     return answer
